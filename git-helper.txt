@@ -1,0 +1,5 @@
+
+$ cd /path/to/my/repo
+$ git remote add origin ssh://repo
+$ git push -u origin master   # to push changes for the first time
+
