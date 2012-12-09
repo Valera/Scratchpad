@@ -1,0 +1,2 @@
+pygmentize -O full,linenos -o example08.html example08.c
+

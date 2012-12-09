@@ -9,7 +9,9 @@ def tune_area(screen_w, screen_h):
     screen_w = float(screen_w)
     screen_h = float(screen_h)
     with os.popen('xsetwacom --set 8 ResetArea; xsetwacom --get 8 area') as f:
-        x0, y0, x1, y1 = [int(s) for s in f.read().split()]
+        output = f.read().split()
+        print(output)
+        x0, y0, x1, y1 = [int(s) for s in output]
     if float(x1) / y1 > screen_w / screen_h:
         new_w = y1 / screen_h * screen_w
         new_x0 = (x1 - new_w) / 2.0
