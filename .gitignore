@@ -26,10 +26,9 @@ pip-log.txt
 #Mr Developer
 .mr.developer.cfg
 
-#General
-*~
-
 #C
 a.out
 *.so
 
+#Backups
+*~
