@@ -1,9 +1,14 @@
+#!/usr/bin/env python3
+
 import os
 import sys
 
+
 def auto_tune_area():
-    w, h = os.popen("xdpyinfo | grep dimensions | awk '{print $2;}'").read().split('x')
+    command = "xdpyinfo | grep dimensions | awk '{print $2;}'"
+    w, h = os.popen(command).read().split('x')
     tune_area(w, h)
+
 
 def tune_area(screen_w, screen_h):
     screen_w = float(screen_w)
@@ -22,7 +27,9 @@ def tune_area(screen_w, screen_h):
         new_y0 = (y1 - new_h) / 2.0
         new_y1 = new_y0 + new_h
         new_x0, new_x1 = x0, x1
-    os.system('xsetwacom --set 8 area %d %d %d %d' % (new_x0, new_y0, new_x1, new_y1))
+    os.system('xsetwacom --set 8 area %d %d %d %d' %
+            (new_x0, new_y0, new_x1, new_y1))
+
 
 if __name__ == "__main__":
     if len(sys.argv) == 1:
@@ -34,4 +41,3 @@ if __name__ == "__main__":
             tune_area(w, h)
         else:
             print("Usage:\n  Auto mode:\t%s\nInteractive:\t%s -i")
-

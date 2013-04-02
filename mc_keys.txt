@@ -2,4 +2,5 @@ MC:
 M-S-h  directory history
 M-h    command history
 +      select by template
+M-S-=
 

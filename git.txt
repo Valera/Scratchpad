@@ -1,0 +1,6 @@
+New project on Bitbucket:
+
+$ mkdir /path/to/your/project
+$ cd /path/to/your/project
+$ git init
+$ git remote add origin ssh://git@bitbucket.org/USER/PROJECT.git
