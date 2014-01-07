@@ -2,4 +2,5 @@ pygmentize -O full,linenos -o example08.html example08.c
 
 sudo rm /var/cache/apt/archives/*.deb /var/cache/apt/archives/partial/*
 
+sudo ufw reject out http
 
